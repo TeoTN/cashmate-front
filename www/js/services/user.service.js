@@ -36,9 +36,10 @@
       function login_ok(response) {
         console.log("LOGGED IN");
         is_authenticated = true;
+
         loginDeferred.resolve({
-          id: response.id,
-          points: response.points
+          id: response.data.id,
+          points: response.data.points
         });
       }
 
@@ -81,8 +82,8 @@
       function register_ok(response) {
         console.log("SIGNED UP SUCCESSFULLY");
         regDeferred.resolve({
-          id: response.id,
-          points: response.points
+          id: response.data.id,
+          points: response.data.points
         });
       }
 

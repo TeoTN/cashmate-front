@@ -4,11 +4,12 @@
     .controller("LoginController",
       function ($scope, UserService, $ionicPopup, $state) {
         $scope.data = {};
-
+        
         $scope.login = function () {
           console.log('noelo');
           UserService.login($scope.data.username, $scope.data.password)
-            .then(function () {
+            .then(function (data) {
+              console.log(data);
               $state.go('dashboard');
             }).catch(function () {
             $ionicPopup.alert({

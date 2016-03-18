@@ -20,9 +20,8 @@ angular.module('cashmate', ['ionic'])
       if (window.StatusBar) {
         StatusBar.styleDefault();
       }
-      $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
-        if (toState.authenticate && !UserService.isAuthenticated()){
-          // User isn’t authenticated
+      $rootScope.$on("$stateChangeStart", function (event, toState) {
+        if (toState.authenticate && !UserService.isAuthenticated()) {
           $state.transitionTo("login");
           event.preventDefault();
         }
@@ -45,11 +44,11 @@ angular.module('cashmate', ['ionic'])
         authenticate: false
       })
       .state('dashboard', {
-      url: '/dashboard',
-      templateUrl: 'views/dashboard.html',
-      controller: 'DashboardController',
-      authenticate: true
-    });
+        url: '/dashboard',
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardController',
+        authenticate: true
+      });
 
     $urlRouterProvider.otherwise('/login')
   });

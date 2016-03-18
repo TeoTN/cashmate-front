@@ -30,10 +30,11 @@ header h1 {
 }
 
 .label-wrap {
-  margin: 5px 0 !important;
+  margin: 10px 0 !important;
 }
 
 .wszystkie-buttony {
+  margin: 5px 0 !important;
   text-transform: uppercase;
 }
 
@@ -44,9 +45,15 @@ header h1 {
 }
 
 .button-piotra-none {
-  background-color: #20A0C1 !important;
+  background-color: #18778F !important;
   width: 100%;
   color: #FFF !important;
+}
+
+#dashboard-background {
+  background: url("../img/bg.png") no-repeat;
+  background-size: 100% 100%;
+
 }
 
 
