@@ -25,7 +25,7 @@
     ];
     $scope.step = 0;
     $scope.$watch('step', function(step) {
-      var curr = intro[step];
+      var curr = intro[step%intro.length];
       $scope.title = curr.title;
       $scope.text = curr.text;
       $scope.icon = curr.icon;
@@ -37,6 +37,8 @@
       $scope.step++;
       if ($scope.step === intro.length-1) {
         $scope.last = true;
+      }
+      if ($scope.step === intro.length) {
         $scope.skip();
       }
     };

@@ -9,14 +9,14 @@
       </div>
       <form action="#">
         <label class="item item-input label-wrap">
-          <span class="input-label">Username</span>
-          <input type="text">
+          <span class="input-label" >Username</span>
+          <input type="text" ng-model="data.username">
         </label>
         <label class="item item-input label-wrap">
-          <span class="input-label">Password</span>
-          <input type="password">
+          <span class="input-label" >Password</span>
+          <input type="password" ng-model="data.password">
         </label>
-        <button class="button wszystkie-buttony button-piotra-salamona" type="submit">Log in</button>
+        <button class="button wszystkie-buttony button-piotra-salamona" ng-click="login()">Log in</button>
         <button class="button wszystkie-buttony button-piotra-none" type="button">register</button>
       </form>
 
