@@ -1,1 +1,52 @@
 /* Empty. Add your own CSS if you like */
+header {
+  display: block;
+}
+
+header h1 {
+  font-family: Cabin;
+  font-size: 48px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin-top: 60px !important;
+  display: block;
+}
+
+#splash-wrap {
+  background-color: #20A0C1;
+  padding: 30px;
+}
+
+#logo {
+  display: block;
+  margin: 30px auto;
+  width: 128px;
+  height: 128px;
+}
+
+#logo img {
+  width: 128px;
+  height: 128px;
+}
+
+.label-wrap {
+  margin: 5px 0 !important;
+}
+
+.wszystkie-buttony {
+  text-transform: uppercase;
+}
+
+.button-piotra-salamona {
+  background-color: #FF7E60 !important;
+  width: 100%;
+  color: #FFF !important;
+}
+
+.button-piotra-none {
+  background-color: #20A0C1 !important;
+  width: 100%;
+  color: #FFF !important;
+}
+
+
