@@ -1,5 +1,7 @@
-angular.module('cashmate', ['ionic'])
-  .controller("LoginController", function ($scope) {
-    $scope.custom_value = 44;
-  });
-
+(function () {
+  "use strict";
+  angular.module('cashmate')
+    .controller("LoginController", function ($scope) {
+      $scope.custom_value = 44;
+    });
+})();
