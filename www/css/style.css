@@ -12,8 +12,16 @@ header h1 {
   display: block;
 }
 
-#splash-wrap {
+body, body .pane {
+  background-color: #20A0C1 !important;
+}
+
+body {
   background-color: #20A0C1;
+}
+
+#splash-wrap {
+  display: block;
   padding: 30px;
 }
 
@@ -33,7 +41,7 @@ header h1 {
   margin: 5px 0 !important;
 }
 
-.wszystkie-buttony {
+.button {
   text-transform: uppercase;
 }
 
@@ -44,9 +52,38 @@ header h1 {
 }
 
 .button-piotra-none {
-  background-color: #20A0C1 !important;
+  background-color: #18778F !important;
   width: 100%;
   color: #FFF !important;
 }
 
+.intro-wrap {
+  text-align: center;
+  padding: 30px;
+}
 
+.intro-wrap h3 {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  font-size: 14px;
+}
+
+.text-teaser {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+}
+.button-group .button {
+  flex: 0 1 auto;
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+}

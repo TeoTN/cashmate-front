@@ -33,7 +33,13 @@ angular.module('cashmate', ['ionic'])
         url: '/register',
         templateUrl: 'views/register.html',
         controller: 'RegisterController'
-      });
+      })
+      .state('intro', {
+        url: '/intro',
+        templateUrl: 'views/intro/intro.html',
+        controller: 'IntroController'
+      })
+;
 
     $urlRouterProvider.otherwise('/login')
   });

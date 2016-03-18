@@ -1,0 +1,24 @@
+<ion-view>
+  <ion-pane>
+    <ion-content class="intro-wrap">
+      <header>
+        <h1>CashMate</h1>
+      </header>
+      <div class="icon-teaser">
+        <img ng-src="{{icon}}">
+      </div>
+      <h3>{{title}}</h3>
+      <p class="text-teaser">
+        {{text}}
+      </p>
+      <div class="button-group fixed-bottom">
+        <button class="button button-piotra-none" ng-hide="last" ng-click="skip();">
+          Skip
+        </button>
+        <button class="button button-piotra-none" ng-click="nextStep();">
+          Proceed
+        </button>
+      </div>
+    </ion-content>
+  </ion-pane>
+</ion-view>
