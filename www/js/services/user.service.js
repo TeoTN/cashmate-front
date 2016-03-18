@@ -1,17 +1,22 @@
-(function(){
   angular
     .module('cashmate')
     .service('UserService', UserService);
 
-  UserService.$inject = ['$scope', '$http', '$q', 'config'];
+  UserService.$inject = ['$http', '$q', 'config'];
 
-  function UserService($scope, $http, $q, config) {
+  function UserService($http, $q, config) {
     var base_url = config.API_URL + 'user/';
+    var is_authenticated = false;
     return {
       login: login,
       logout: logout,
-      register: register
+      register: register,
+      isAuthenticated: isAuthenticated
     };
+
+    function isAuthenticated () {
+      return is_authenticated;
+    }
 
     function login(login, password) {
       var url = base_url + 'login',
@@ -21,6 +26,7 @@
         },
         loginDeferred = $q.defer();
 
+      console.log(data);
       $http({
         url: url,
         method: 'POST',
@@ -29,6 +35,7 @@
 
       function login_ok(response) {
         console.log("LOGGED IN");
+        is_authenticated = true;
         loginDeferred.resolve({
           id: response.id,
           points: response.points
@@ -37,6 +44,7 @@
 
       function login_fail(error) {
         var fail_msg = "UNABLE TO LOG IN";
+        is_authenticated = false;
         console.error(fail_msg, error);
         loginDeferred.reject(fail_msg);
       }
@@ -45,6 +53,7 @@
     }
 
     function logout() {
+      is_authenticated = false;
       var url = base_url + 'logout';
       return $http.get(url);
     }
@@ -90,4 +99,3 @@
       return password1 === password2;
     }
   }
-})();
