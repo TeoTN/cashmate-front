@@ -12,6 +12,11 @@ header h1 {
   display: block;
 }
 
+header h2 {
+  font-size: 20px;
+  color: #fff;
+}
+
 body, body .pane {
   background-color: #20A0C1 !important;
 }
@@ -113,4 +118,35 @@ body {
   position: fixed;
   bottom: 10%;
   right: 7%;
+}
+
+.activity-wrap {
+  padding: 30px !important;
+  background: url("../img/bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.coupon {
+  display: block;
+  margin: 50px 0;
+  background: #fff;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.3);
+  padding: 15px;
+}
+
+.coupon img {
+  width: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-item-grow {
+  flex: 1 0 auto;
+}
+
+.flex-item-nogrow {
+  flex: 0 0 auto;
 }

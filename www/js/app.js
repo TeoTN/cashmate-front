@@ -53,7 +53,12 @@ angular.module('cashmate', ['ionic'])
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardController',
         authenticate: true
-      });
+      })
+      .state('coupon', {
+        url: '/coupon',
+        templateUrl: 'views/coupon.html',
+        authenticate: true
+      });;
 
     $urlRouterProvider.otherwise('/login')
   });
