@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('cashmate', ['ionic'])
+angular.module('cashmate', ['ionic', 'ngCookies'])
 
   .run(function ($ionicPlatform, $rootScope, $state, UserService) {
     $ionicPlatform.ready(function () {
@@ -28,7 +28,8 @@ angular.module('cashmate', ['ionic'])
       });
     });
   })
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+
     $stateProvider
       .state('login', {
         url: '/login',
@@ -40,6 +41,12 @@ angular.module('cashmate', ['ionic'])
       .state('register', {
         url: '/register',
         templateUrl: 'views/register.html',
+        controller: 'RegisterController',
+        authenticate: false
+      })
+      .state('register_confirm', {
+        url: '/register_confirm',
+        templateUrl: 'views/register_confirm.html',
         controller: 'RegisterController',
         authenticate: false
       })

@@ -2,24 +2,11 @@
   "use strict";
   angular.module('cashmate')
     .controller("LoginController",
-      function ($scope, UserService, $ionicPopup, $state, $http) {
+      function ($scope, UserService, $ionicPopup, $state, $cookies) {
+        $cookies.put('myFavorite', 'oatmeal');
         $scope.data = {};
-        $scope.pinger = function() {
-          $http.get('http://jupblb.eu/').then(function(r){
-            $ionicPopup.alert({
-              title: 'TEST OK!',
-              template: JSON.stringify(r.data)
-            });
-          }, function(e){
 
-            $ionicPopup.alert({
-              title: 'TEST FAIL!',
-              template: JSON.stringify(e)
-            });
-          });
-        };
         $scope.login = function () {
-          console.log('noelo');
           UserService.login($scope.data.username, $scope.data.password)
             .then(function (data) {
               console.log(data);
@@ -27,9 +14,15 @@
             }).catch(function (errorMsg) {
             $ionicPopup.alert({
               title: 'Login failed!',
-              template: errorMsg + 'Please check your credentials!'
+              template: errorMsg + '. Please check your credentials!'
             });
           });
+
+          $scope.data = {};
+        };
+
+        $scope.go_to_register_page = function () {
+          $state.go('register');
         }
       })
 })();

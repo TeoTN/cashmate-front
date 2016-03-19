@@ -2,22 +2,32 @@
   <ion-pane>
     <ion-content id="splash-wrap">
       <header>
-        <h2>CashMate</h2>
+        <h1>CashMate</h1>
       </header>
-      <div id="logo">
-        <img src="img/logo.png">
-      </div>
+
       <form action="#">
         <label class="item item-input label-wrap">
           <span class="input-label" >Username</span>
           <input type="text" ng-model="data.username">
         </label>
+
+        <label class="item item-input label-wrap">
+          <span class="input-label" >Email address</span>
+          <input type="email" ng-model="data.email">
+        </label>
+
         <label class="item item-input label-wrap">
           <span class="input-label" >Password</span>
           <input type="password" ng-model="data.password">
         </label>
-        <button class="button wszystkie-buttony button-piotra-salamona" ng-click="login()">Log in</button>
-        <button class="button wszystkie-buttony button-piotra-none" type="button">register</button>
+
+        <label class="item item-input label-wrap">
+          <span class="input-label" >Retype password</span>
+          <input type="password" ng-model="data.password1">
+        </label>
+
+        <button class="button wszystkie-buttony button-piotra-salamona" ng-click="register()">Register me</button>
+        <button class="button wszystkie-buttony button-piotra-none" ng-click="go_to_login_page()">Go back</button>
       </form>
 
     </ion-content>
