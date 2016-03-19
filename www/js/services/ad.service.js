@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   angular.module('cashmate')
-    .service('AdService', AdService);
+    .factory('AdService', AdService);
 
   AdService.$inject = ['$http', '$q', '$cookies', 'config'];
   function AdService($http, $q, $cookies, config) {

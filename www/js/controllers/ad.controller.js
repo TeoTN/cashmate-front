@@ -3,7 +3,7 @@
   angular.module('cashmate').controller('AdController', AdController);
   AdController.$inject = ['$scope', 'AdService'];
   function AdController($scope, ads) {
-    $scope.step = 0;
+    $scope.ad_step = 0;
     ads.retrieve().then(function(ad) {
       $scope.ad = ad;
       ad.videoUrl = ad.videoUrl.replace("watch?v=", "embed/");
@@ -11,7 +11,7 @@
       console.error(e);
     });
     $scope.nextStep = function() {
-      $scope.step++;
+      $scope.ad_step++;
     }
   }
 })();
