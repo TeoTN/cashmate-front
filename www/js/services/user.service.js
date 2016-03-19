@@ -16,7 +16,8 @@
     };
 
     function isAuthenticated () {
-      return is_authenticated;
+      is_authenticated = is_authenticated || store.getItem('token');
+      return is_authenticated ;
     }
 
     function login(login, password) {

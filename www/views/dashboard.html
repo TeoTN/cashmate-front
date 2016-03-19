@@ -2,9 +2,12 @@
   <ion-pane>
     <ion-content id="dashboard-background">
       <header>
-        <h1>Cashmate Accounts</h1>
+        <h2>Cashmate Accounts</h2>
         <div id="dashboard-balance">
-          <h2>Your balance</h2>
+          {{ JSON.stringify(points) }}
+          <h3>Your balance</h3>
+          <h1>{{ points }}</h1>
+
         </div>
       </header>
       <button class="button-rounded button-piotra-salamona" id="add-points" ng-click="watchAd();">

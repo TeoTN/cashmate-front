@@ -77,6 +77,22 @@ angular.module('cashmate', ['ionic', 'ngCookies'])
         templateUrl: 'views/ad.html',
         authenticate: true,
         controller: 'AdController'
+      })
+      .state('win', {
+        url: '/win',
+        templateUrl: 'views/win.html',
+        authenticate: true,
+        controller: function($scope, $state) {
+          $scope.nextStep = function() { $state.go('dashboard'); };
+        }
+      })
+      .state('fail', {
+        url: '/fail',
+        templateUrl: 'views/fail.html',
+        authenticate: true,
+        controller: function($scope, $state) {
+          $scope.nextStep = function() { $state.go('dashboard'); };
+        }
       });
 
     $urlRouterProvider.otherwise('/login')
