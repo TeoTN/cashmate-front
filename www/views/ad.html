@@ -13,10 +13,11 @@
         <header>
           <h2>Answer a question</h2>
         </header>
+        {{ad.question}}
         <h1>{{ad.question.content}}</h1>
         <ul>
           <li ng-repeat="answer in ad.question.answers">
-            <input type="checkbox"> {{answer.content}}
+            <input type="radio" name="answer" ng-model="answer" value="answer.id"> {{answer.content}}
           </li>
         </ul>
       </div>

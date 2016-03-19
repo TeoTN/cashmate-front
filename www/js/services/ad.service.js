@@ -3,17 +3,19 @@
   angular.module('cashmate')
     .factory('AdService', AdService);
 
-  AdService.$inject = ['$http', '$q', '$cookies', 'config'];
-  function AdService($http, $q, $cookies, config) {
+  AdService.$inject = ['$http', '$q', '$window', 'config'];
+  function AdService($http, $q, $window, config) {
     var base_url = config.API_URL + 'ad';
+    var store = $window.localStorage;
+
     return {
       retrieve: retrieve
     };
 
     function retrieve() {
+      var token = store.getItem("token");
       var defer = $q.defer();
-      console.log("TOKEN", $cookies.get('token'));
-      $http.get(base_url + "?token="+$cookies.get('token')).then(function(r){
+      $http.get(base_url + "?token="+token).then(function(r){
         defer.resolve(r.data);
       }, function(e) {
         defer.reject(e);
