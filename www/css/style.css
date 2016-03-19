@@ -109,7 +109,7 @@ body {
 }
 
 #add-points {
-  position: absolute;
-  top: 21.3%;
-  right: 10%;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
 }
