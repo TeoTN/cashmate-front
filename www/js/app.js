@@ -28,7 +28,8 @@ angular.module('cashmate', ['ionic'])
       });
     });
   })
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+    $httpProvider.defaults.withCredentials = true;
     $stateProvider
       .state('login', {
         url: '/login',
@@ -58,7 +59,13 @@ angular.module('cashmate', ['ionic'])
         url: '/coupon',
         templateUrl: 'views/coupon.html',
         authenticate: true
-      });;
+      })
+      .state('watchad', {
+        url: '/ad',
+        templateUrl: 'views/ad.html',
+        authenticate: true,
+        controller: 'AdController'
+      });
 
     $urlRouterProvider.otherwise('/login')
   });

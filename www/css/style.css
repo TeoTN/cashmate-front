@@ -150,3 +150,8 @@ body {
 .flex-item-nogrow {
   flex: 0 0 auto;
 }
+
+.ad-frame {
+  display: block;
+  width: 100%;
+}

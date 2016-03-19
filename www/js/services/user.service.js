@@ -34,6 +34,7 @@
       }).then(login_ok, login_fail);
 
       function login_ok(response) {
+        console.log(response);
         console.log("LOGGED IN");
         is_authenticated = true;
 
