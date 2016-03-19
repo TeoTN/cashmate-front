@@ -2,14 +2,12 @@
   "use strict";
   angular.module('cashmate')
     .controller("LoginController",
-      function ($scope, UserService, $ionicPopup, $state, $cookies) {
-        $cookies.put('myFavorite', 'oatmeal');
+      function ($scope, UserService, $ionicPopup, $state) {
         $scope.data = {};
 
         $scope.login = function () {
           UserService.login($scope.data.username, $scope.data.password)
             .then(function (data) {
-              console.log(data);
               $state.go('dashboard');
             }).catch(function (errorMsg) {
             $ionicPopup.alert({

@@ -2,9 +2,19 @@
   <ion-pane>
     <ion-content class="activity-wrap">
       <header>
-        <h2>Earn points</h2>
+        <h2>Earn points - watch a video</h2>
       </header>
-      <iframe class="ad-frame" src="{{ ad.videoUrl }}" frameborder="0" allowfullscreen></iframe>
+      <iframe class="ad-frame" ng-src="{{ ad.videoUrl }}" frameborder="0" allowfullscreen></iframe>
+      <h5>Hint</h5>
+      <p>Watch the video above carefully before proceeding, in a next step you'll be asked a few questions about it.</p>
+      <div class="button-group fixed-bottom">
+        <button class="button button-piotra-salamona" ng-hide="last" ng-click="skip();">
+          Surrender
+        </button>
+        <button class="button button-success" ng-click="nextStep();">
+          Proceed
+        </button>
+      </div>
     </ion-content>
   </ion-pane>
 </ion-view>

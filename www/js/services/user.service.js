@@ -2,9 +2,9 @@
     .module('cashmate')
     .service('UserService', UserService);
 
-  UserService.$inject = ['$http', '$q', 'config'];
+  UserService.$inject = ['$http', '$q', '$cookies', 'config'];
 
-  function UserService($http, $q, config) {
+  function UserService($http, $q, $cookies, config) {
     var base_url = config.API_URL + 'user/';
     var is_authenticated = false;
     return {
@@ -26,16 +26,15 @@
         },
         loginDeferred = $q.defer();
 
-      console.log(data);
       $http({
         url: url,
         method: 'POST',
-        data: data
+        data: data,
+        withCredentials: true
       }).then(login_ok, login_fail);
 
       function login_ok(response) {
-        console.log(response);
-        console.log("LOGGED IN");
+        $cookies.put('token', response.data.token);
         is_authenticated = true;
 
         loginDeferred.resolve({

@@ -28,6 +28,12 @@ angular.module('cashmate', ['ionic', 'ngCookies'])
       });
     });
   })
+  .config(function($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+      'self',
+      '*://www.youtube.com/**'
+    ]);
+  })
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
