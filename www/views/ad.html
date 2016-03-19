@@ -2,23 +2,26 @@
   <ion-pane>
     <ion-content class="activity-wrap">
       <div ng-if="ad_step==0">
-      <header>
-        <h2>Earn points - watch a video</h2>
-      </header>
-      <iframe class="ad-frame" ng-src="{{ ad.videoUrl }}" frameborder="0" allowfullscreen></iframe>
-      <h5>Hint</h5>
-      <p>Watch the video above carefully before proceeding, in a next step you'll be asked a few questions about it.</p>
+        <header>
+          <h2>Earn points - watch a video</h2>
+        </header>
+        <iframe class="ad-frame" ng-src="{{ ad.videoUrl }}" frameborder="0" allowfullscreen></iframe>
+        <div class="hint">
+          <h5>Hint</h5>
+          <hr style="border: 1px solid rgba(0,0,0,0.5);">
+          <p>Watch the video above carefully before proceeding, in a next step you'll be asked a few questions about it.</p>
+        </div>
       </div>
       <div ng-if="ad_step==1">
         <header>
           <h2>Answer a question</h2>
         </header>
-        <h1>{{ad.question.content}}</h1>
-        <ul>
+        <h1 class="question">{{ad.question.content}}</h1>
+        <ul class="answer-wrap">
           <li ng-repeat="answer in ad.question.answers">
             <label class="answer">
               <input type="radio" name="current_answer" ng-model="$parent.$parent.$parent.current_answer"
-                     ng-value="answer['id']"> {{answer.content}}
+                     ng-value="answer['id']"> <span>{{answer.content}}</span>
             </label>
           </li>
         </ul>
