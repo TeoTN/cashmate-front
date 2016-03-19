@@ -28,7 +28,7 @@ angular.module('cashmate', ['ionic', 'ngCookies'])
       });
     });
   })
-  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
       .state('login', {
@@ -65,7 +65,13 @@ angular.module('cashmate', ['ionic', 'ngCookies'])
         url: '/coupon',
         templateUrl: 'views/coupon.html',
         authenticate: true
-      });;
+      })
+      .state('watchad', {
+        url: '/ad',
+        templateUrl: 'views/ad.html',
+        authenticate: true,
+        controller: 'AdController'
+      });
 
     $urlRouterProvider.otherwise('/login')
   });
