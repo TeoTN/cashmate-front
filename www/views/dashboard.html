@@ -10,9 +10,19 @@
 
         </div>
       </header>
-      <button class="button-rounded button-piotra-salamona" id="add-points" ng-click="watchAd();">
-        <img src="img/watch.png">
-      </button>
+      <section class="coupon-wrap">
+        <div ng-repeat="coupon in coupons" class="coupon">
+          <img ng-src="{{ coupon.imageUrl }}">
+          <div class="coupon-label">
+            <h5>{{coupon.title}}</h5>
+            <h6>{{coupon.vendor}}, {{coupon.location}}</h6>
+          </div>
+        </div>
+      </section>
     </ion-content>
+    <button class="button-rounded button-piotra-salamona" id="add-points" ng-click="watchAd();">
+      <img src="img/watch.png">
+    </button>
   </ion-pane>
 </ion-view>
+

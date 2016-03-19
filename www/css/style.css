@@ -156,16 +156,22 @@ body {
   background-size: 100% 100%;
 }
 
+.coupon-wrap {
+  margin-top: 40px;
+}
+
 .coupon {
   display: block;
-  margin: 50px 0;
+  margin: 10px 0;
   background: #fff;
   box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.3);
-  padding: 15px;
+  padding: 10px;
 }
 
 .coupon img {
-  width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-height: 150px;
 }
 
 .flex-row {
@@ -214,3 +220,4 @@ body {
 .hint h5 {
   text-transform: uppercase;
 }
+

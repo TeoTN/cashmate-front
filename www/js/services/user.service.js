@@ -12,12 +12,19 @@
       login: login,
       logout: logout,
       register: register,
-      isAuthenticated: isAuthenticated
+      isAuthenticated: isAuthenticated,
+      getPoints: getPoints
     };
 
     function isAuthenticated () {
       is_authenticated = is_authenticated || store.getItem('token');
       return is_authenticated ;
+    }
+
+    function getPoints() {
+      var token = store.getItem('token');
+      var url =  base_url + 'status?token='+token;
+      return $http.get(url);
     }
 
     function login(login, password) {
