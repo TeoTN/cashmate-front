@@ -58,6 +58,4 @@
   </platform>
   <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
   <plugin name="cordova-plugin-whitelist" version="1" />
-  <allow-intent href="http://*/*" />
-  <allow-intent href="https://*/*" />
 </widget>
