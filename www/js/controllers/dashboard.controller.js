@@ -19,5 +19,9 @@
       $scope.watchAd = function() {
         $state.go('watchad');
       };
+
+      $scope.showCoupon = function(cid) {
+        $state.go('coupon', {cid: cid});
+      }
     })
 })();

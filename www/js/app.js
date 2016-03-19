@@ -68,9 +68,10 @@ angular.module('cashmate', ['ionic', 'ngCookies'])
         authenticate: true
       })
       .state('coupon', {
-        url: '/coupon',
+        url: '/coupon/:cid',
         templateUrl: 'views/coupon.html',
-        authenticate: true
+        authenticate: true,
+        controller: 'CouponController'
       })
       .state('watchad', {
         url: '/ad',

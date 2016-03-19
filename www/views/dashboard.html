@@ -11,7 +11,7 @@
         </div>
       </header>
       <section class="coupon-wrap">
-        <div ng-repeat="coupon in coupons" class="coupon">
+        <div ng-repeat="coupon in coupons" class="coupon" ng-click="showCoupon(coupon.id)">
           <img ng-src="{{ coupon.imageUrl }}">
           <div class="coupon-label">
             <h5>{{coupon.title}}</h5>
