@@ -87,6 +87,14 @@ angular.module('cashmate', ['ionic', 'ngCookies'])
           $scope.nextStep = function() { $state.go('dashboard'); };
         }
       })
+      .state('confirmed', {
+        url: '/confirmed',
+        templateUrl: 'views/confirmed.html',
+        authenticate: true,
+        controller: function($scope, $state) {
+          $scope.nextStep = function() { $state.go('dashboard'); };
+        }
+      })
       .state('fail', {
         url: '/fail',
         templateUrl: 'views/fail.html',
@@ -94,6 +102,12 @@ angular.module('cashmate', ['ionic', 'ngCookies'])
         controller: function($scope, $state) {
           $scope.nextStep = function() { $state.go('dashboard'); };
         }
+      })
+      .state('code', {
+        url: '/code/:cid',
+        templateUrl: 'views/code.html',
+        authenticate: true,
+        controller: 'CodeController'
       });
 
     $urlRouterProvider.otherwise('/login')

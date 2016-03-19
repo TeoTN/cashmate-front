@@ -1,12 +1,16 @@
 (function () {
   "use strict";
   angular.module('cashmate')
-    .controller("DashboardController", function ($scope, $window, $timeout, $state, UserService, CouponService) {
+    .controller("DashboardController", function ($scope, $window, $timeout, $state, UserService, CouponService, $interval) {
       var store = $window.localStorage;
       //$scope.points = store.getItem('points') || null;
-      UserService.getPoints().then(function(response){
-        $scope.points = response.data.points;
-      });
+      function reload() {
+        UserService.getPoints().then(function (response) {
+          $scope.points = response.data.points;
+        });
+      }
+
+      $interval(reload, 2000);
 
       CouponService.listAll()
         .then(
@@ -23,5 +27,6 @@
       $scope.showCoupon = function(cid) {
         $state.go('coupon', {cid: cid});
       }
-    })
+
+    });
 })();
