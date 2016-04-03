@@ -1,7 +1,7 @@
-Ionic App Base
+Cashmate
 =====================
 
-A starting project for Ionic that optionally supports using custom SCSS.
+The main idea of our project was to deliver our clients with discount coupons for watching advertisements (and answering a question about them).
 
 ## Using this project
 
